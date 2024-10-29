@@ -1,9 +1,7 @@
 // app/components/AudioPlayer.tsx
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import { ChevronsLeft, ChevronsRight } from 'lucide-react';
-
-import { Progress } from './ui/progress';
 
 interface AudioPlayerProps {
   exibePlayer: boolean;
@@ -16,23 +14,7 @@ export default function AudioPlayer({
   setExibePlayer,
   title
 }: AudioPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [audio, setAudio] = useState('');
-
-  useEffect(() => {
-    console.log(title);
-  }, [title]);
-  const togglePlay = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
+  useEffect(() => {}, [title]);
 
   const toggleExpand = () => {
     setExibePlayer(!exibePlayer); // Alterna entre expandir e colapsar
@@ -41,7 +23,7 @@ export default function AudioPlayer({
   return (
     <>
       {exibePlayer ? (
-        <div className="h-[160px] fixed bottom-4 right-0 flex items-center space-x-4 rounded-bl-lg rounded-tl-lg bg-[#282828] p-2  shadow-lg">
+        <div className="fixed bottom-4 right-0 flex h-[160px] items-center space-x-4 rounded-bl-lg rounded-tl-lg bg-[#282828] p-2  shadow-lg">
           <button
             onClick={toggleExpand}
             className=" text-blue-500 hover:underline"
@@ -75,7 +57,7 @@ export default function AudioPlayer({
           <p className="text-gray-700">Podcast Episode</p> */}
         </div>
       ) : (
-        <div className="h-[160px] fixed bottom-4 right-0 flex items-center space-x-4 rounded-bl-lg rounded-tl-lg bg-[#282828] p-2 shadow-lg">
+        <div className="fixed bottom-4 right-0 flex h-[160px] items-center space-x-4 rounded-bl-lg rounded-tl-lg bg-[#282828] p-2 shadow-lg">
           <button
             onClick={toggleExpand}
             className=" text-blue-500 hover:underline"

@@ -1,7 +1,6 @@
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Skeleton } from './ui/skeleton';
 import { parse, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
@@ -39,7 +38,6 @@ export function Podcast() {
     const response = await fetch(`/api/podcast/listar`);
     const { podcasts } = await response.json();
 
-    console.log(podcasts);
     setEpisodes(podcasts);
 
     setLoading(false);
@@ -53,7 +51,6 @@ export function Podcast() {
   };
 
   const playNow = () => {
-    console.log(typeof episodes[0].duration);
     setEpisodioSelecionado(episodes[0].title);
 
     setExibePlayer(true);
@@ -70,21 +67,20 @@ export function Podcast() {
             alt="Logo NFL-ETC Podcast"
             width={150}
             height={150}
-         className="mx-auto rounded-sm"
+            className="mx-auto rounded-sm"
           />
           <div className="container mx-auto flex flex-col items-center">
-          <h1 className="mt-4 text-3xl font-bold md:text-4xl">
-            NFL-ETC Podcast
-          </h1>
-          <p className="mt-2 max-w-md text-base md:text-lg">
-            O melhor sobre futebol americano com 3 apresentadores apaixonados
-            pelo esporte!
-          </p>
-          <p className="mt-1 text-sm md:text-base">
-            Episódios novos toda terça-feira
-          </p>
+            <h1 className="mt-4 text-3xl font-bold md:text-4xl">
+              NFL-ETC Podcast
+            </h1>
+            <p className="mt-2 max-w-md text-base md:text-lg">
+              O melhor sobre futebol americano com 3 apresentadores apaixonados
+              pelo esporte!
+            </p>
+            <p className="mt-1 text-sm md:text-base">
+              Episódios novos toda terça-feira
+            </p>
           </div>
-          
         </div>
       </header>
 
