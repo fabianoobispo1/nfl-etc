@@ -5,7 +5,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Nfl Etc',
-  description: 'Site Principal do podcast NFL ETC',
+  description: 'Curiosidades, bastidores, os personagens e as melhores histórias dentro e fora de campo da NFL.',
   keywords:
     'nfl, NLF, nef etc, NFL-ETC, Podcast de esporte, futebol americano'
 };
