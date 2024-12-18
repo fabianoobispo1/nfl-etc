@@ -37,8 +37,9 @@ export function Podcast() {
   const loadPodcast = async () => {
     setLoading(true)
     const response = await fetch(`/api/podcast/listar`)
+    console.log(response)
     const { podcasts } = await response.json()
-
+    console.log(podcasts)
     setEpisodes(podcasts)
 
     setLoading(false)

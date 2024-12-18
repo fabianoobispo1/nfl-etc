@@ -5,8 +5,10 @@ const parser = new Parser()
 
 export async function GET() {
   try {
+    console.log('iniciou api ')
     const linkRSS = 'https://anchor.fm/s/2b3ad0b0/podcast/rss'
     const feed = await parser.parseURL(linkRSS)
+    console.log(feed)
     // Mapear os dados do feed e pegar apenas os 3 últimos lançados
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const episodesData = feed.items.slice(0, 4).map((item: any) => ({
