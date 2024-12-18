@@ -57,10 +57,10 @@ export function Podcast() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen rounded-lg bg-gray-100">
       {/* Header */}
 
-      <header className="bg-[#2b6d27] px-4 py-8 text-center text-white">
+      <header className="rounded-t-lg bg-[#2b6d27] px-4 py-8 text-center text-white">
         <div className="container mx-auto flex flex-col items-center md:flex-row">
           <Image
             src="/logoNFLETC.jpg"
@@ -261,7 +261,7 @@ export function Podcast() {
       />
 
       {/* Footer */}
-      <footer className="bg-[#2b6d27] py-6 text-center text-white">
+      <footer className="rounded-b-lg bg-[#2b6d27] py-6 text-center text-white">
         <div className="container mx-auto">
           <p>&copy; 2024 NFL-ETC Podcast. Todos os direitos reservados.</p>
         </div>
