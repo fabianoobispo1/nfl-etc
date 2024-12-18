@@ -23,7 +23,7 @@ export default function AudioPlayer({
   return (
     <>
       {exibePlayer ? (
-        <div className="fixed bottom-4 right-0 flex h-[160px] items-center space-x-4 rounded-bl-lg rounded-tl-lg bg-[#282828] p-2  shadow-lg">
+        <div className="fixed bottom-4 right-0 flex h-[160px] items-center space-x-4 rounded-bl-lg rounded-tl-lg bg-[#2E2325] p-2  shadow-lg">
           <button
             onClick={toggleExpand}
             className=" text-blue-500 hover:underline"
@@ -37,7 +37,7 @@ export default function AudioPlayer({
             height="152"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
-            className="rounded-xl bg-[#282828]"
+            className="rounded-xl bg-[#2E2325]"
           ></iframe>
           {/*     <Progress
             value={(5 / 100) * 100}
