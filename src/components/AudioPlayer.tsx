@@ -37,6 +37,7 @@ export default function AudioPlayer({
             height="152"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
+            className="rounded-lg"
           ></iframe>
           {/*     <Progress
             value={(5 / 100) * 100}
