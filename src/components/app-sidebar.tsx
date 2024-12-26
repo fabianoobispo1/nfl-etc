@@ -1,11 +1,11 @@
 'use client'
 import {
-  Calendar,
+  /*  Calendar, */
   ChevronDown,
   ChevronUp,
   Home,
   Settings,
-  UserPen,
+  /* UserPen, */
 } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
 import { useState } from 'react'
@@ -45,16 +45,6 @@ const items = [
     title: 'Home',
     url: '/dashboard',
     icon: Home,
-  },
-  {
-    title: 'Seletiva',
-    url: '/dashboard/seletiva',
-    icon: Calendar,
-  },
-  {
-    title: 'Perfil',
-    url: '/dashboard/perfil',
-    icon: UserPen,
   },
 ]
 const itemsAdm = [
@@ -129,7 +119,7 @@ export function AppSidebar() {
     <Sidebar variant="floating" collapsible="icon">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Jf Imperadores</SidebarGroupLabel>
+          <SidebarGroupLabel>Nfl-Etc</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
