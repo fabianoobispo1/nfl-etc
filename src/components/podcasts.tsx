@@ -3,13 +3,16 @@ import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import { parse, format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { fetchQuery } from 'convex/nextjs'
 
 import { Skeleton } from './ui/skeleton'
+// eslint-disable-next-line import/order
 import AudioPlayer from './AudioPlayer'
 
-// Importa os estilos do Swiper
 import 'swiper/css'
 import 'swiper/css/navigation'
+
+import { api } from '../../convex/_generated/api'
 
 interface PodcastEpisode {
   title: string
@@ -29,10 +32,18 @@ export function Podcast() {
   const episodeRef = useRef<HTMLDivElement>(null) // Ref para o início da seção do episódio
   const [exibePlayer, setExibePlayer] = useState(false)
   const [episodioSelecionado, setEpisodioSelecionado] = useState('')
+  const [bio, setBio] = useState('')
 
   useEffect(() => {
     loadPodcast()
+    loadBio()
   }, [])
+
+  const loadBio = async () => {
+    fetchQuery(api.bioTelainicial.getAllbioTelainicialRole).then((result) => {
+      setBio(result[0].bio)
+    })
+  }
 
   const loadPodcast = async () => {
     setLoading(true)
@@ -75,13 +86,7 @@ export function Podcast() {
             <h1 className="mt-4 text-3xl font-bold md:text-4xl">
               NFL-ETC Podcast
             </h1>
-            <p className="mt-2 max-w-md text-base md:text-lg">
-              O melhor sobre futebol americano com 3 apresentadores apaixonados
-              pelo esporte!
-            </p>
-            <p className="mt-1 text-sm md:text-base">
-              Episódios novos toda terça-feira
-            </p>
+            <p className="mt-2 max-w-md text-base md:text-lg">{bio}</p>
           </div>
         </div>
       </div>

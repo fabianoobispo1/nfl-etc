@@ -13,6 +13,12 @@ export default function Page() {
   const handleNavigation = () => {
     router.push('/dashboard/admin/administradores')
   }
+  const handleBio = () => {
+    router.push('/dashboard/admin/bio')
+  }
+  const handleApresentadores = () => {
+    router.push('/dashboard/admin/apresentadores')
+  }
 
   return (
     <ScrollArea className="h-full w-full">
@@ -25,7 +31,9 @@ export default function Page() {
           />
         </div>
 
-        <div>
+        <div className="flex  gap-2">
+          <Button onClick={handleBio}>Bio Site</Button>
+          <Button onClick={handleApresentadores}>Apresentadores</Button>
           <Button onClick={handleNavigation}>Administradores</Button>
         </div>
       </div>
